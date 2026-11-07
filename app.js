@@ -1,5 +1,5 @@
-const GITHUB_OWNER = "YOUR_GITHUB_USERNAME";
-const GITHUB_REPO = "YOUR_MODEL_REPO";
+const GITHUB_OWNER = "qxeai";
+const GITHUB_REPO = "web";
 const GITHUB_BRANCH = "main";
 const GITHUB_MODEL_DIR = "models";
 
