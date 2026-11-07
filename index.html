@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QXEAi</title>
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/fuzzball@2.2.2/dist/fuzzball.umd.min.js"></script>
+</head>
+<body>
+
+<aside id="sidebar">
+  <h1>QXEAi</h1>
+
+  <section>
+    <h2>可用模型</h2>
+    <div id="modelList" class="model-list"></div>
+    <div class="pin-row">
+      <input id="pinInput" placeholder="pin 名称">
+      <button onclick="applyPin()">加载</button>
+    </div>
+    <div class="row">
+      <button onclick="refreshModels()" class="ghost">刷新列表</button>
+      <button onclick="preloadAll()" class="ghost">预加载全部</button>
+    </div>
+    <div id="pinStatus"></div>
+  </section>
+
+  <section>
+    <h2>当前知识库</h2>
+    <div id="kbMeta"></div>
+  </section>
+
+  <section>
+    <h2>导入 / 导出</h2>
+    <input type="file" id="importFile" accept=".qxeai,.mineai,.md,.txt">
+    <label><input type="checkbox" id="replaceKb"> 清空后导入</label>
+    <div class="row">
+      <button onclick="importFile()">导入</button>
+      <button onclick="exportKb()" class="ghost">导出</button>
+    </div>
+    <button onclick="clearAll()" class="danger">清空本地缓存</button>
+  </section>
+</aside>
+
+<main id="main">
+  <div id="messages">
+    <div class="empty" id="emptyHint">
+      <h2>开始对话</h2>
+      <p>在左侧选择模型，或直接提问。</p>
+    </div>
+  </div>
+  <div id="composer">
+    <div class="inner">
+      <textarea id="query" rows="1" placeholder="输入问题…"
+        oninput="autoGrow(this)"
+        onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();send();}"></textarea>
+      <button id="sendBtn" onclick="send()">发送</button>
+    </div>
+  </div>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
