@@ -1,0 +1,50 @@
+name: Build Manifest
+on:
+  push:
+    branches: [main]
+    paths: ['models/**']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate manifest
+        run: |
+          python3 - <<'PY'
+          import json, os, datetime
+          d = 'models'
+          models = []
+          if os.path.isdir(d):
+              for f in sorted(os.listdir(d)):
+                  if not f.endswith('.qxeai'):
+                      continue
+                  p = os.path.join(d, f)
+                  try:
+                      with open(p, 'r', encoding='utf-8') as fp:
+                          data = json.load(fp)
+                      models.append({
+                          'pin': f[:-6],
+                          'count': data.get('count', len(data.get('entries', []))),
+                          'skills': len(data.get('skills', [])),
+                          'size': os.path.getsize(p),
+                      })
+                  except Exception as e:
+                      print('skip', f, e)
+          payload = {
+              'models': models,
+              'generated_at': datetime.datetime.utcnow().isoformat() + 'Z',
+          }
+          with open('manifest.json', 'w', encoding='utf-8') as fp:
+              json.dump(payload, fp, ensure_ascii=False, indent=2)
+          print('generated', len(models), 'models')
+          PY
+      - name: Commit manifest
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add manifest.json
+          git diff --staged --quiet || git commit -m "chore: update manifest"
+          git push
