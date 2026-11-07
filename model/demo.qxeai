@@ -1,0 +1,727 @@
+{
+  "format": "mineai",
+  "version": 1,
+  "app": "MineAi",
+  "exported_at": "2026-11-07T18:14:57",
+  "count": 116,
+  "skills": [
+    "CSS 选择器与盒模型",
+    "HTML 基础与语义",
+    "Python变量与数据类型",
+    "Python字符串与列表操作",
+    "Python异常处理与文件操作",
+    "Python条件循环与函数",
+    "Python模块导入与常见排错",
+    "一元一次方程",
+    "一元二次方程",
+    "二元一次方程组",
+    "分式方程",
+    "布局与响应式",
+    "常见易错点与调试",
+    "方程基础概念",
+    "方程应用题建模",
+    "方程解题易错与排错",
+    "鸡兔同笼基础概念",
+    "鸡兔同笼易错与排错",
+    "鸡兔同笼解题方法"
+  ],
+  "checksum": "ea5ddda3c09f65d577dc62a84d809d948661a5f8eaeaeaaa0ae4fc249ea1b567",
+  "entries": [
+    {
+      "skill": "Python变量与数据类型",
+      "ask": "如何定义变量并查看类型？",
+      "answer": "直接赋值即可创建变量，用type()查看类型。\nx = 10\nprint(type(x))\n变量无需声明类型，类型由对象决定。",
+      "index": 1
+    },
+    {
+      "skill": "Python变量与数据类型",
+      "ask": "Python里变量咋声明？",
+      "answer": "Python不需要单独声明，直接写“名称 = 值”就创建变量。\nname = \"Tom\"\n变量名区分大小写，不能以数字开头。",
+      "index": 2
+    },
+    {
+      "skill": "Python变量与数据类型",
+      "ask": "变量名报SyntaxError怎么办？",
+      "answer": "检查变量名是否以数字开头、是否含空格或特殊符号、是否用了关键字。\n变量名只能由字母数字下划线组成且不能数字开头。\nuser_name 合法\n2name 非法",
+      "index": 3
+    },
+    {
+      "skill": "Python变量与数据类型",
+      "ask": "如何把字符串转成整数？",
+      "answer": "用int()转换，要求字符串内容是合法整数。\nn = int(\"123\")\n若含小数或非数字字符会抛ValueError。",
+      "index": 4
+    },
+    {
+      "skill": "Python变量与数据类型",
+      "ask": "浮点数和整数相加结果是什么类型？",
+      "answer": "结果是float，Python会自动做类型提升。\ntype(1 + 2.0) 为 float\n需要整数结果时用int()或round()转换。",
+      "index": 5
+    },
+    {
+      "skill": "Python变量与数据类型",
+      "ask": "可变类型和不可变类型有啥区别？",
+      "answer": "不可变对象创建后值不能改，如int、str、tuple；可变对象可原地修改，如list、dict。\n对不可变对象“修改”会生成新对象。\n对list赋值元素会改原对象。",
+      "index": 6
+    },
+    {
+      "skill": "Python字符串与列表操作",
+      "ask": "如何反转一个字符串？",
+      "answer": "用切片 s[::-1] 返回反转后的新字符串。\ns = \"abc\"\nprint(s[::-1])\n字符串不可变，原字符串不变。",
+      "index": 7
+    },
+    {
+      "skill": "Python字符串与列表操作",
+      "ask": "字符串咋倒过来？",
+      "answer": "用切片 [::-1] 即可。\n\"hello\"[::-1] 得到 \"olleh\"\n也可以 ''.join(reversed(s))。",
+      "index": 8
+    },
+    {
+      "skill": "Python字符串与列表操作",
+      "ask": "如何按分隔符拆分字符串？",
+      "answer": "用split()按分隔符拆分，默认按空白拆分。\nparts = \"a,b,c\".split(\",\")\n结果得到列表 [\"a\",\"b\",\"c\"]。",
+      "index": 9
+    },
+    {
+      "skill": "Python字符串与列表操作",
+      "ask": "列表里怎么删除某个元素？",
+      "answer": "按值删除用lst.remove(值)，删除第一个匹配项；按下标删除用del lst[索引]或lst.pop(索引)。\n值不存在时remove会抛ValueError。",
+      "index": 10
+    },
+    {
+      "skill": "Python字符串与列表操作",
+      "ask": "列表索引越界报IndexError怎么处理？",
+      "answer": "先检查索引范围，合法下标是0到len(lst)-1，负数表示从末尾倒数。\n不确定时用if 0 <= i < len(lst)判断。\n也可用切片避免越界。",
+      "index": 11
+    },
+    {
+      "skill": "Python字符串与列表操作",
+      "ask": "如何合并两个列表？",
+      "answer": "用+返回新列表，或用extend()原地追加。\na = [1]\nb = [2]\nc = a + b\na.extend(b)会修改a，需要保留原列表时用+或复制后extend。",
+      "index": 12
+    },
+    {
+      "skill": "Python条件循环与函数",
+      "ask": "如何写if-elif-else判断？",
+      "answer": "按顺序判断条件，命中一个分支后其余分支不执行。\nif x > 0: ...\nelif x == 0: ...\nelse: ...\n注意冒号和缩进。",
+      "index": 13
+    },
+    {
+      "skill": "Python条件循环与函数",
+      "ask": "Python里if语句咋写？",
+      "answer": "用if 条件: 下一行缩进写执行体，多条件用elif和else。\nif age >= 18:\n    print(\"成年\")\n条件后冒号不能漏。",
+      "index": 14
+    },
+    {
+      "skill": "Python条件循环与函数",
+      "ask": "for循环如何遍历列表并获取索引？",
+      "answer": "用enumerate()同时拿索引和值。\nfor i, v in enumerate(lst):\n    print(i, v)\n默认从0开始，可传start=1调整起始值。",
+      "index": 15
+    },
+    {
+      "skill": "Python条件循环与函数",
+      "ask": "while循环死循环了怎么办？",
+      "answer": "检查循环条件是否最终会变False，确认循环体内有更新条件变量。\n可用break提前退出。\nwhile n > 0:\n    n -= 1",
+      "index": 16
+    },
+    {
+      "skill": "Python条件循环与函数",
+      "ask": "如何定义带默认参数的函数？",
+      "answer": "在参数列表中用“参数=默认值”定义，默认参数放在无默认参数之后。\ndef greet(name=\"Tom\"):\n    return name\n调用时不传该参数就用默认值。",
+      "index": 17
+    },
+    {
+      "skill": "Python条件循环与函数",
+      "ask": "函数里修改全局变量报UnboundLocalError怎么办？",
+      "answer": "函数内赋值会让变量被视为局部变量，需用global声明后再修改全局变量。\nglobal count\n更推荐通过参数和返回值传递数据。",
+      "index": 18
+    },
+    {
+      "skill": "Python异常处理与文件操作",
+      "ask": "如何捕获异常并打印错误信息？",
+      "answer": "用try/except捕获，except Exception as e可拿到异常对象。\ntry:\n    ...\nexcept Exception as e:\n    print(e)\n不要裸except吞掉所有错误。",
+      "index": 19
+    },
+    {
+      "skill": "Python异常处理与文件操作",
+      "ask": "Python报错了怎么接住不让程序崩？",
+      "answer": "把可能出错的代码放try块，用except捕获预期异常类型。\ntry:\n    int(s)\nexcept ValueError:\n    print(\"不是整数\")\n只捕获你明确能处理的异常。",
+      "index": 20
+    },
+    {
+      "skill": "Python异常处理与文件操作",
+      "ask": "如何打开文件并确保自动关闭？",
+      "answer": "用with open(...) as f，代码块结束会自动关闭文件。\nwith open(\"a.txt\", \"r\", encoding=\"utf-8\") as f:\n    data = f.read()\n推荐指定encoding避免乱码。",
+      "index": 21
+    },
+    {
+      "skill": "Python异常处理与文件操作",
+      "ask": "读文件出现UnicodeDecodeError怎么办？",
+      "answer": "通常是编码不匹配，打开文件时显式指定正确编码。\nopen(\"a.txt\", encoding=\"utf-8\")\n不确定编码时可尝试gbk，或用errors=\"ignore\"临时排查。",
+      "index": 22
+    },
+    {
+      "skill": "Python异常处理与文件操作",
+      "ask": "如何写入文本文件？",
+      "answer": "用open(path,\"w\",encoding=\"utf-8\")写入，\"w\"会覆盖原文件。\nwith open(\"a.txt\", \"w\", encoding=\"utf-8\") as f:\n    f.write(\"hi\")\n追加内容用模式\"a\"。",
+      "index": 23
+    },
+    {
+      "skill": "Python异常处理与文件操作",
+      "ask": "文件不存在报FileNotFoundError怎么处理？",
+      "answer": "先确认路径和当前工作目录，检查文件名及扩展名。\n需要程序容错时用try/except FileNotFoundError捕获。\n写文件可用\"w\"自动创建，读文件不会自动创建。",
+      "index": 24
+    },
+    {
+      "skill": "Python模块导入与常见排错",
+      "ask": "如何导入模块并使用其中的函数？",
+      "answer": "用import 模块名导入，通过模块名.函数名调用。\nimport math\nprint(math.sqrt(4))\n也可from math import sqrt直接调用sqrt。",
+      "index": 25
+    },
+    {
+      "skill": "Python模块导入与常见排错",
+      "ask": "导入模块报ModuleNotFoundError怎么办？",
+      "answer": "先确认模块名拼写和安装环境，第三方库用pip install 包名安装。\npip install requests\n检查当前Python解释器是否与安装环境一致。\n标准库名不要与本地文件重名。",
+      "index": 26
+    },
+    {
+      "skill": "Python模块导入与常见排错",
+      "ask": "自己写的模块导入不到咋弄？",
+      "answer": "确认模块文件在当前目录或sys.path包含的路径中，文件名不要和标准库重名。\n包内导入注意__init__.py和相对导入。\n可在代码中打印sys.path排查。",
+      "index": 27
+    },
+    {
+      "skill": "Python模块导入与常见排错",
+      "ask": "如何查看已安装的第三方包？",
+      "answer": "用pip list列出当前环境已安装包，用pip show 包名查看详情。\npip list\npip show requests\n确认pip对应的是当前使用的Python解释器。",
+      "index": 28
+    },
+    {
+      "skill": "Python模块导入与常见排错",
+      "ask": "运行脚本报IndentationError怎么办？",
+      "answer": "检查缩进是否统一使用空格，同一代码块缩进量必须一致。\n不要混用Tab和空格。\n冒号后的下一行必须缩进。",
+      "index": 29
+    },
+    {
+      "skill": "Python模块导入与常见排错",
+      "ask": "NameError名称未定义怎么排查？",
+      "answer": "检查变量或函数是否在使用前定义，拼写和大小写是否一致。\n确认作用域内能访问该名称。\n导入模块后要带模块名或正确from导入。",
+      "index": 30
+    },
+    {
+      "skill": "方程基础概念",
+      "ask": "什么是方程？",
+      "answer": "含未知数的等式叫方程，使等式成立的未知数值叫解；解方程就是求所有解或判定无解。",
+      "index": 31
+    },
+    {
+      "skill": "方程基础概念",
+      "ask": "方程和代数式咋区分？",
+      "answer": "方程含等号，可判断真假；代数式没有等号，只是一个表达式。",
+      "index": 32
+    },
+    {
+      "skill": "方程基础概念",
+      "ask": "方程的解和解方程有什么区别？",
+      "answer": "解是使等式成立的未知数值；解方程是求这些值的过程。",
+      "index": 33
+    },
+    {
+      "skill": "方程基础概念",
+      "ask": "在题目要求“解方程”时，最后要写什么？",
+      "answer": "写解集或x=...，并做代回检验，分式方程和根式方程必须验根。",
+      "index": 34
+    },
+    {
+      "skill": "方程基础概念",
+      "ask": "等式两边能同时除以未知数吗？",
+      "answer": "不能直接除，除非确定未知数不为0；否则会丢解，应先移项因式分解或讨论。",
+      "index": 35
+    },
+    {
+      "skill": "一元一次方程",
+      "ask": "如何解一元一次方程？",
+      "answer": "去分母、去括号、移项、合并同类项、系数化为1，最后代回检验。",
+      "index": 36
+    },
+    {
+      "skill": "一元一次方程",
+      "ask": "一元一次方程咋移项？",
+      "answer": "移项要变号，把含未知数项移到一边、常数项移到另一边。",
+      "index": 37
+    },
+    {
+      "skill": "一元一次方程",
+      "ask": "去分母时最容易错什么？",
+      "answer": "每一项都要乘最简公分母，别漏乘不含分母的项，分子多项式要加括号。",
+      "index": 38
+    },
+    {
+      "skill": "一元一次方程",
+      "ask": "解出0x=0或0x=5说明什么？",
+      "answer": "0x=0恒成立，方程有无数解；0x=5矛盾，方程无解。",
+      "index": 39
+    },
+    {
+      "skill": "一元一次方程",
+      "ask": "系数化为1时符号老出错怎么办？",
+      "answer": "两边同除以未知数系数，注意负号；可先写成ax=b再得x=b/a，a≠0。",
+      "index": 40
+    },
+    {
+      "skill": "一元二次方程",
+      "ask": "一元二次方程常用解法有哪些？",
+      "answer": "因式分解、配方法、求根公式；能分解优先分解，不能分解用公式。",
+      "index": 41
+    },
+    {
+      "skill": "一元二次方程",
+      "ask": "求根公式是什么？",
+      "answer": "对ax^2+bx+c=0（a≠0），x=[-b±√(b^2-4ac)]/(2a)。",
+      "index": 42
+    },
+    {
+      "skill": "一元二次方程",
+      "ask": "判别式咋判断根的情况？",
+      "answer": "Δ=b^2-4ac；Δ>0两不等实根，Δ=0两相等实根，Δ<0无实根。",
+      "index": 43
+    },
+    {
+      "skill": "一元二次方程",
+      "ask": "配方法解二次方程步骤是什么？",
+      "answer": "化二次项系数为1，移常数项，两边加一次项系数一半的平方，写成完全平方再开方。",
+      "index": 44
+    },
+    {
+      "skill": "一元二次方程",
+      "ask": "因式分解法解方程要注意什么？",
+      "answer": "先化为一边为0，再分解为乘积等于0，分别令每个因式为0，不能直接两边约去含未知数的因式。",
+      "index": 45
+    },
+    {
+      "skill": "一元二次方程",
+      "ask": "二次方程解完要检验吗？",
+      "answer": "在实数范围内公式法一般不需验根，但应用题要检验是否符合实际意义。",
+      "index": 46
+    },
+    {
+      "skill": "二元一次方程组",
+      "ask": "如何解二元一次方程组？",
+      "answer": "常用代入消元或加减消元，先消去一个未知数化为一元一次方程，再回代求另一个。",
+      "index": 47
+    },
+    {
+      "skill": "二元一次方程组",
+      "ask": "加减消元法咋选系数？",
+      "answer": "选同一未知数系数绝对值的最小公倍数，把方程乘适当数使系数相等或相反，再相加或相减。",
+      "index": 48
+    },
+    {
+      "skill": "二元一次方程组",
+      "ask": "代入消元时选哪个未知数好？",
+      "answer": "选系数为1或-1的未知数，或用含一个未知数的式子表示另一个，计算更简单。",
+      "index": 49
+    },
+    {
+      "skill": "二元一次方程组",
+      "ask": "方程组解出后怎么检查？",
+      "answer": "把x、y代回原方程组两个方程都成立才算正确。",
+      "index": 50
+    },
+    {
+      "skill": "二元一次方程组",
+      "ask": "方程组无解或无数解怎么判断？",
+      "answer": "化为同未知数系数比：系数比相等而常数比不等则无解；三组比相等则无数解。",
+      "index": 51
+    },
+    {
+      "skill": "分式方程",
+      "ask": "分式方程怎么解？",
+      "answer": "找最简公分母，方程两边同乘公分母化为整式方程，解出后必须代回原方程检验。",
+      "index": 52
+    },
+    {
+      "skill": "分式方程",
+      "ask": "分式方程为什么要验根？",
+      "answer": "去分母可能乘到使分母为0的值，产生增根，所以必须检查分母是否为零。",
+      "index": 53
+    },
+    {
+      "skill": "分式方程",
+      "ask": "分式方程去分母漏乘怎么办？",
+      "answer": "每一项都要乘最简公分母，包括不含分母的常数项；可先给常数项补分母1再乘。",
+      "index": 54
+    },
+    {
+      "skill": "分式方程",
+      "ask": "分式方程出现增根说明什么？",
+      "answer": "该值使原方程分母为0，不是原方程的解，应舍去并写清原因。",
+      "index": 55
+    },
+    {
+      "skill": "分式方程",
+      "ask": "分式方程无解有哪几种情况？",
+      "answer": "整式方程无解，或解出的根全是增根，原分式方程都无解。",
+      "index": 56
+    },
+    {
+      "skill": "方程应用题建模",
+      "ask": "如何用方程解应用题？",
+      "answer": "设未知数，找等量关系列方程，解方程，检验是否符合实际，最后作答。",
+      "index": 57
+    },
+    {
+      "skill": "方程应用题建模",
+      "ask": "应用题设未知数咋设？",
+      "answer": "优先设所求量为x，也可设关键中间量；注意单位统一，并写清x表示什么。",
+      "index": 58
+    },
+    {
+      "skill": "方程应用题建模",
+      "ask": "行程问题常用等量关系是什么？",
+      "answer": "路程=速度×时间；相遇问题路程和等于总路程，追及问题路程差等于初始距离。",
+      "index": 59
+    },
+    {
+      "skill": "方程应用题建模",
+      "ask": "工程问题怎么列方程？",
+      "answer": "把总工作量设为1，效率=1/时间；合作效率等于各效率之和。",
+      "index": 60
+    },
+    {
+      "skill": "方程应用题建模",
+      "ask": "利润问题常用公式有哪些？",
+      "answer": "利润=售价-进价，利润率=利润/进价×100%，打折后售价=原价×折扣。",
+      "index": 61
+    },
+    {
+      "skill": "方程应用题建模",
+      "ask": "应用题解出负根怎么处理？",
+      "answer": "先检查方程和范围；若表示长度、人数等非负量，负根应舍去并说明实际意义。",
+      "index": 62
+    },
+    {
+      "skill": "方程解题易错与排错",
+      "ask": "解方程时两边平方为什么可能增根？",
+      "answer": "平方不是同解变形，可能把不满足原式的值变成满足，根式方程解完必须代回原方程检验。",
+      "index": 63
+    },
+    {
+      "skill": "方程解题易错与排错",
+      "ask": "方程两边同时约去公因式为什么会丢解？",
+      "answer": "约去的公因式可能为0，而0不能作除数；应移项因式分解，令各因式为0。",
+      "index": 64
+    },
+    {
+      "skill": "方程解题易错与排错",
+      "ask": "解方程移项后符号总错咋办？",
+      "answer": "移项本质是两边同加或同减，跨等号变号；每一步只做一种变形并复查。",
+      "index": 65
+    },
+    {
+      "skill": "方程解题易错与排错",
+      "ask": "方程解完代回检验发现不成立怎么办？",
+      "answer": "检查去分母、去括号、移项、平方等步骤；分式方程和根式方程优先排查增根和定义域。",
+      "index": 66
+    },
+    {
+      "skill": "方程解题易错与排错",
+      "ask": "解方程时未知数在分母上要注意什么？",
+      "answer": "先确定分母不为0的定义域，去分母后求出的根必须排除使分母为0的值。",
+      "index": 67
+    },
+    {
+      "skill": "鸡兔同笼基础概念",
+      "ask": "什么是鸡兔同笼问题？",
+      "answer": "鸡兔同笼是已知总头数和总脚数，求鸡、兔各多少只的经典应用题；默认每只动物一个头，鸡2脚、兔4脚。",
+      "index": 68
+    },
+    {
+      "skill": "鸡兔同笼基础概念",
+      "ask": "鸡兔同笼咋理解？",
+      "answer": "把鸡和兔关在一起，告诉你一共多少个头、多少只脚，问鸡兔各几只；核心是兔比鸡每只多2只脚。",
+      "index": 69
+    },
+    {
+      "skill": "鸡兔同笼基础概念",
+      "ask": "鸡兔同笼中头数和脚数分别对应什么关系？",
+      "answer": "头数等于鸡数加兔数；脚数等于2乘鸡数加4乘兔数。",
+      "index": 70
+    },
+    {
+      "skill": "鸡兔同笼基础概念",
+      "ask": "题目只给总头数和总脚数时，基本关系式是什么？",
+      "answer": "设鸡x只、兔y只，则x+y=头数，2x+4y=脚数；解这个二元一次方程组即可。",
+      "index": 71
+    },
+    {
+      "skill": "鸡兔同笼基础概念",
+      "ask": "鸡兔同笼为什么默认鸡2脚兔4脚？",
+      "answer": "这是常见设定，鸡两条腿、兔四条腿；若题目换成其他动物，需按题目给出的实际脚数调整。",
+      "index": 72
+    },
+    {
+      "skill": "鸡兔同笼解题方法",
+      "ask": "如何用假设法解鸡兔同笼？",
+      "answer": "假设全是鸡，脚数=2×总头数；实际脚数比它多出的部分除以2就是兔数，鸡数=总头数-兔数。",
+      "index": 73
+    },
+    {
+      "skill": "鸡兔同笼解题方法",
+      "ask": "鸡兔同笼假设法咋弄？",
+      "answer": "先全当成鸡算脚，看差多少只脚；每把一只鸡换成兔会多2只脚，所以差脚数除以2得到兔数。",
+      "index": 74
+    },
+    {
+      "skill": "鸡兔同笼解题方法",
+      "ask": "如何用方程法求鸡兔各多少只？",
+      "answer": "设鸡x只、兔y只，列x+y=头数、2x+4y=脚数；联立求解x和y即可。",
+      "index": 75
+    },
+    {
+      "skill": "鸡兔同笼解题方法",
+      "ask": "鸡兔同笼方程法解不出整数怎么办？",
+      "answer": "先检查总脚数是否为偶数、是否在2×头数到4×头数之间；不满足则题目数据通常无整数解。",
+      "index": 76
+    },
+    {
+      "skill": "鸡兔同笼解题方法",
+      "ask": "在头数脚数较大时，怎样快速算兔数？",
+      "answer": "兔数=(总脚数-2×总头数)÷2；鸡数=总头数-兔数，直接代入公式即可。",
+      "index": 77
+    },
+    {
+      "skill": "鸡兔同笼解题方法",
+      "ask": "如何用抬脚法理解鸡兔同笼？",
+      "answer": "让每只动物抬2只脚，剩余脚数=总脚数-2×头数；剩余脚都是兔的，每兔剩2脚，所以兔数=剩余脚数÷2。",
+      "index": 78
+    },
+    {
+      "skill": "鸡兔同笼易错与排错",
+      "ask": "鸡兔同笼计算结果出现小数怎么办？",
+      "answer": "说明数据不满足整数解；检查总脚数奇偶性和范围，鸡兔数量必须是非负整数。",
+      "index": 79
+    },
+    {
+      "skill": "鸡兔同笼易错与排错",
+      "ask": "鸡兔同笼算出来兔数咋是负数？",
+      "answer": "总脚数小于2×总头数时会出现负兔数；题目数据矛盾，需核对脚数或头数。",
+      "index": 80
+    },
+    {
+      "skill": "鸡兔同笼易错与排错",
+      "ask": "如何判断鸡兔同笼题目是否有解？",
+      "answer": "总脚数应为偶数，且满足2×头数≤总脚数≤4×头数；超出范围或总脚数为奇数通常无整数解。",
+      "index": 81
+    },
+    {
+      "skill": "鸡兔同笼易错与排错",
+      "ask": "鸡兔同笼中把鸡兔脚数弄反会怎样？",
+      "answer": "会得到错误答案；鸡固定2脚、兔固定4脚，假设全是鸡时多出的脚除以2才是兔数。",
+      "index": 82
+    },
+    {
+      "skill": "鸡兔同笼易错与排错",
+      "ask": "在题目有额外条件时，鸡兔同笼怎么处理？",
+      "answer": "先按头脚数列基本方程，再把额外条件转成方程或不等式联立；不要只套兔数公式。",
+      "index": 83
+    },
+    {
+      "skill": "鸡兔同笼易错与排错",
+      "ask": "鸡兔同笼假设法最后忘了求鸡数怎么办？",
+      "answer": "兔数求出后，鸡数=总头数-兔数；最后用脚数=2×鸡数+4×兔数验算。",
+      "index": 84
+    },
+    {
+      "skill": "HTML 基础与语义",
+      "ask": "HTML5 文档如何声明？",
+      "answer": "首行写 `<!DOCTYPE html>` 声明 HTML5，再写 html 根元素并在 head 中设置字符集和视口。",
+      "index": 85
+    },
+    {
+      "skill": "HTML 基础与语义",
+      "ask": "HTML5 文档开头咋写？",
+      "answer": "第一行写 `<!DOCTYPE html>`，接着用 html 标签包住 head 和 body，head 里放 meta charset 与 viewport。",
+      "index": 86
+    },
+    {
+      "skill": "HTML 基础与语义",
+      "ask": "什么是语义化标签？",
+      "answer": "用 header、nav、main、article、section、footer 等标签表达页面结构，而不是全部用 div。",
+      "index": 87
+    },
+    {
+      "skill": "HTML 基础与语义",
+      "ask": "语义化标签有啥好处？",
+      "answer": "代码更易读维护，搜索引擎和屏幕阅读器能更好理解页面结构；优先选合适标签替代无意义 div。",
+      "index": 88
+    },
+    {
+      "skill": "HTML 基础与语义",
+      "ask": "img 的 alt 属性有什么用？",
+      "answer": "提供图片替代文本，图片失败时显示，屏幕阅读器读取，利于无障碍和 SEO；纯装饰图可用 alt=\"\"。",
+      "index": 89
+    },
+    {
+      "skill": "HTML 基础与语义",
+      "ask": "表单里 label 如何关联输入框？",
+      "answer": "用 label 的 for 指向 input 的 id，或把 input 放在 label 内；点击标签可聚焦对应输入框。",
+      "index": 90
+    },
+    {
+      "skill": "HTML 基础与语义",
+      "ask": "id 和 class 有什么区别？",
+      "answer": "id 页面内应唯一，class 可复用；CSS 中 #id 和 .class 选择，JS 常用 id 获取单个元素。",
+      "index": 91
+    },
+    {
+      "skill": "HTML 基础与语义",
+      "ask": "块级元素和行内元素有啥区别？",
+      "answer": "块级默认独占一行且可设宽高，行内默认不换行且宽高由内容决定；可用 display 修改。",
+      "index": 92
+    },
+    {
+      "skill": "CSS 选择器与盒模型",
+      "ask": "如何引入 CSS 样式表？",
+      "answer": "最常用外部样式表，在 head 中写 link 标签；也可用内部 style 或行内 style 属性。\n`<link rel=\"stylesheet\" href=\"style.css\">`",
+      "index": 93
+    },
+    {
+      "skill": "CSS 选择器与盒模型",
+      "ask": "CSS 咋加到页面里？",
+      "answer": "优先用 link 引入外部 CSS，便于缓存和维护；临时可用 head 里的 style 或元素上的 style 属性。\n`<link rel=\"stylesheet\" href=\"style.css\">`",
+      "index": 94
+    },
+    {
+      "skill": "CSS 选择器与盒模型",
+      "ask": "CSS 选择器优先级怎么算？",
+      "answer": "大致为行内样式 > id 选择器 > class/属性/伪类 > 元素/伪元素；同权重后定义覆盖前定义，!important 最高但慎用。",
+      "index": 95
+    },
+    {
+      "skill": "CSS 选择器与盒模型",
+      "ask": "为什么写了 CSS 却不生效？",
+      "answer": "检查选择器是否匹配、是否被更高优先级覆盖、样式表路径和加载顺序、属性拼写及浏览器缓存；用开发者工具看计算样式。",
+      "index": 96
+    },
+    {
+      "skill": "CSS 选择器与盒模型",
+      "ask": "什么是 CSS 盒模型？",
+      "answer": "元素由 content、padding、border、margin 组成；默认 width 只含 content，设置 box-sizing:border-box 后宽高包含 padding 和 border。\n`box-sizing: border-box;`",
+      "index": 97
+    },
+    {
+      "skill": "CSS 选择器与盒模型",
+      "ask": "box-sizing 咋设置更直观？",
+      "answer": "用 box-sizing:border-box 让元素宽高包含内边距和边框，布局时不用反复扣减；可统一给 * 设置。\n`* { box-sizing: border-box; }`",
+      "index": 98
+    },
+    {
+      "skill": "CSS 选择器与盒模型",
+      "ask": "如何让块级元素水平居中？",
+      "answer": "定宽块级元素可用 margin-left:auto 和 margin-right:auto；Flex 容器可用 justify-content:center；文本用 text-align:center。\n`margin: 0 auto;`",
+      "index": 99
+    },
+    {
+      "skill": "CSS 选择器与盒模型",
+      "ask": "相邻元素上下 margin 为什么不是相加？",
+      "answer": "相邻块级元素的上下 margin 会合并取较大值，这叫 margin 塌陷；可用 padding、border、overflow 或 Flex/Grid 避免。",
+      "index": 100
+    },
+    {
+      "skill": "布局与响应式",
+      "ask": "如何用 Flex 实现水平垂直居中？",
+      "answer": "父容器设置 display:flex，justify-content:center 控制主轴居中，align-items:center 控制交叉轴居中。\n`display:flex; justify-content:center; align-items:center;`",
+      "index": 101
+    },
+    {
+      "skill": "布局与响应式",
+      "ask": "Flex 水平垂直居中咋弄？",
+      "answer": "给父元素加 display:flex，再用 justify-content:center 和 align-items:center 即可让子元素居中。\n`display:flex; justify-content:center; align-items:center;`",
+      "index": 102
+    },
+    {
+      "skill": "布局与响应式",
+      "ask": "如何实现左固定右自适应两栏布局？",
+      "answer": "Flex 容器中左栏设固定宽度，右栏设 flex:1；或用 Grid 设置 grid-template-columns:200px 1fr。\n`display:flex; .right{flex:1;}`",
+      "index": 103
+    },
+    {
+      "skill": "布局与响应式",
+      "ask": "响应式布局怎么做？",
+      "answer": "在 head 设置 viewport，使用相对单位、Flex/Grid，并用媒体查询 @media 按屏幕宽度调整布局。\n`@media (max-width: 768px) { ... }`",
+      "index": 104
+    },
+    {
+      "skill": "布局与响应式",
+      "ask": "移动端 viewport 怎么写？",
+      "answer": "在 head 中加 viewport meta 标签，让布局宽度跟随设备并设置初始缩放为 1。\n`<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">`",
+      "index": 105
+    },
+    {
+      "skill": "布局与响应式",
+      "ask": "手机上页面横向滚动怎么办？",
+      "answer": "检查固定宽度、超宽图片、负 margin 和未设 viewport；给图片 max-width:100%，用开发者工具定位溢出元素。\n`img { max-width: 100%; }`",
+      "index": 106
+    },
+    {
+      "skill": "布局与响应式",
+      "ask": "position 有哪些常用值？",
+      "answer": "static 默认，relative 相对自身偏移，absolute 相对最近定位祖先，fixed 相对视口，sticky 滚动吸顶；配合 top/left 等使用。",
+      "index": 107
+    },
+    {
+      "skill": "布局与响应式",
+      "ask": "absolute 定位参照哪个元素？",
+      "answer": "参照最近的非 static 定位祖先；没有则参照初始包含块，常给父元素 position:relative 作为参照。\n`.parent { position: relative; }`",
+      "index": 108
+    },
+    {
+      "skill": "常见易错点与调试",
+      "ask": "图片为什么显示不出来？",
+      "answer": "检查 src 路径大小写和相对位置、文件是否存在、网络面板状态码；alt 文本可帮助判断加载失败。",
+      "index": 109
+    },
+    {
+      "skill": "常见易错点与调试",
+      "ask": "img 加载失败咋排查？",
+      "answer": "先看开发者工具 Network 是否 404，再核对 src 路径、文件名大小写和服务器目录；确认文件确实存在。",
+      "index": 110
+    },
+    {
+      "skill": "常见易错点与调试",
+      "ask": "HTML 标签没闭合会怎样？",
+      "answer": "可能导致后续结构错乱、样式作用范围异常；用编辑器高亮或 HTML 校验工具检查闭合和嵌套。",
+      "index": 111
+    },
+    {
+      "skill": "常见易错点与调试",
+      "ask": "中文乱码怎么解决？",
+      "answer": "在 head 靠前位置声明 charset 为 UTF-8，并确保文件实际保存为 UTF-8 编码。\n`<meta charset=\"UTF-8\">`",
+      "index": 112
+    },
+    {
+      "skill": "常见易错点与调试",
+      "ask": "为什么要设置 meta charset？",
+      "answer": "告诉浏览器文档字符编码，通常用 UTF-8，避免中文乱码；应放在 head 靠前位置。\n`<meta charset=\"UTF-8\">`",
+      "index": 113
+    },
+    {
+      "skill": "常见易错点与调试",
+      "ask": "如何用开发者工具调试 CSS？",
+      "answer": "右键检查元素，在 Styles 面板查看生效和被覆盖规则，在 Computed 面板看最终值，可临时勾选或修改属性。",
+      "index": 114
+    },
+    {
+      "skill": "常见易错点与调试",
+      "ask": "元素超出容器怎么排查？",
+      "answer": "在开发者工具看盒模型、宽高、padding/border、定位和溢出；给容器临时 outline 或 overflow:hidden 观察。",
+      "index": 115
+    },
+    {
+      "skill": "常见易错点与调试",
+      "ask": "CSS 类名写对但不生效怎么办？",
+      "answer": "确认元素确实有该类、选择器层级匹配、样式未被覆盖、CSS 文件已加载；用开发者工具查看匹配规则和计算样式。",
+      "index": 116
+    }
+  ]
+}
